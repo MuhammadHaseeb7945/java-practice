@@ -27,12 +27,12 @@ List<Integer> num= Arrays.asList(10,7,13,29);
 // Stream <Integer> num3=num2.map(n->n*2);
 // num3.forEach(n->System.out.println(n));
 
-// Stream<Integer> result= num.stream()
-// .filter(n->n%2!=0) // iski return type strem ha
-// .map(n->n*3)  // iski return type stream ha
-// .sorted();  // iski bi stream ha
-
-// result.forEach(n->System.out.println(n));
+int result= num.stream()
+.filter(n->n%2!=0) // iski return type strem ha
+.map(n->n*3)  // iski return type stream ha
+.sorted()  // iski bi stream ha
+.reduce(0,(c,e)->c+e);   // 0 initial value ha c current value, e next value ha or idr lamda expresiion ha
+System.out.println(result);
 List<String> num1= Arrays.asList("Haseeb","Ali","Ahmed");
 Stream<String> name= num1.stream()
  .filter(n->n=="Haseeb")
